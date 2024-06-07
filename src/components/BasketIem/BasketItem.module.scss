@@ -1,0 +1,73 @@
+.basketItem {
+  max-width: 633px;
+  width: 100%;
+  min-height: 218px;
+  height: fit-content;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 18px 28px 18px 18px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_price {
+      @extend .basketItem__container;
+      align-items: flex-end;
+    }
+  }
+
+  &__img {
+    width: 146px;
+    height: 136px;
+  }
+
+  &__count {
+    max-width: 125px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__quantity {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+  }
+
+  &__description {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 296px;
+    width: 100%;
+    height: fit-content;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 17px;
+    color: #1c1c27;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 15px;
+    color: #aaa;
+  }
+
+  &__total {
+    min-width: 100px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: right;
+    color: #1c1c27;
+  }
+}

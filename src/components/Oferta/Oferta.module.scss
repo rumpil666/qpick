@@ -1,0 +1,24 @@
+.oferta {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #1c1c27;
+    margin-bottom: 13px;
+  }
+
+  &__subtitle {
+    padding: 0;
+    margin: 0 0 20px;
+    max-width: 600px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+}

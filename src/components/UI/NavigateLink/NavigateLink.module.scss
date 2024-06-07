@@ -1,0 +1,16 @@
+.navLink {
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 17px;
+  transition: 0.2s;
+
+  &__active {
+    @extend .navLink;
+    color: #FFA542;
+  }
+
+  &:hover {
+    color: #FFA542;
+  }
+}

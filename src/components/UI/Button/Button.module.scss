@@ -1,0 +1,46 @@
+.button {
+  $this: &;
+  border: none;
+  cursor: pointer;
+  transition: all .2s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  font-size: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 8px;
+
+  &:active {
+    box-shadow: 0 0 10px 0 #FFA542;
+  }
+
+  &#{$this}__text {
+    font-weight: 600;
+    font-size: 17px;
+    text-align: center;
+    text-wrap: nowrap;
+    padding: 0 6px;
+
+    &:hover {
+      color: #FFA542;
+      box-shadow: 0 0 5px 0 #7e7e7e;
+    }
+  }
+
+  &#{$this}__icon {
+    box-sizing: border-box;
+    border-radius: 100%;
+
+    &:hover {
+      transform: translateY(2px);
+    }
+  }
+
+  &#{$this}__disabled {
+    cursor: default;
+    color: #888888;
+
+    &:hover {
+      color: #888888;
+      box-shadow: none;
+    }
+  }
+}
