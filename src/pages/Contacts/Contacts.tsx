@@ -1,7 +1,7 @@
 import styles from './Contacts.module.scss';
-import avatar from "../../images/avatar.jpg";
+import avatar from "@/images/avatar.jpg";
 
-export const Contacts: React.FC = () => {
+export const ContactsPage: React.FC = () => {
 
   return (
     <main className={styles.contacts}>
@@ -67,3 +67,5 @@ export const Contacts: React.FC = () => {
     </main>
   )
 };
+
+export default ContactsPage;

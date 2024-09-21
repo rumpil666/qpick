@@ -14,10 +14,13 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "start-server": "json-server --watch ./src/server/database/data.json --port 5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
+    "compose-function": "^3.0.3",
+    "json-server": "^1.0.0-beta.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
@@ -30,6 +33,7 @@
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
+    "@types/compose-function": "^0.0.33",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",
@@ -40,8 +44,11 @@
     "gh-pages": "^6.1.1",
     "jsdom": "^23.2.0",
     "prettier": "^3.2.1",
+    "sass": "^1.78.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
+    "vite-jsconfig-paths": "^2.0.1",
+    "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^1.2.0"
   }
 }

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.scss";
 
-export const NotFound: React.FC = () => {
-
+const NotFoundPage: React.FC = () => {
 
   return (
     <main className={styles.notFound}>
@@ -13,3 +12,5 @@ export const NotFound: React.FC = () => {
     </main>
   );
 };
+
+export default NotFoundPage;

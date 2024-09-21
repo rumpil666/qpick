@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { BasketItem } from '../../components/BasketIem/BasketItem';
 import styles from './Basket.module.scss';
-import { formatNumber } from '../../utils/utilities';
-import { Button } from '../../components/UI/Button/Button';
-import { EmptyList } from '../../components/EmptyList/EmptyList';
-import { BasketModal } from '../../components/BasketModal/BasketModal';
-import { buy, toggleModalActive } from '../../store/productSlice';
-import { URL_PAGES } from '../../config/pages-url.config';
 
-export const Basket: React.FC = () => {
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { buy, toggleModalActive } from '@/store/productSlice';
+
+import { formatNumber } from '@/utils/utilities';
+
+import { Button } from '@/components/UI/Button/Button';
+import { EmptyList } from '@/components/EmptyList/EmptyList';
+
+import { BasketItem } from './components/BasketItem/BasketItem';
+import { BasketModal } from './components/BasketModal/BasketModal';
+
+import { URL_PAGES } from '@/config/pages-url.config';
+
+export const BasketPage: React.FC = () => {
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const { basketProducts } = useAppSelector(state => state.product);
   const dispatch = useAppDispatch();
@@ -37,7 +42,7 @@ export const Basket: React.FC = () => {
             <div className={styles.basket__order}>
               <div className={styles.basket__total}>
                 <span className={styles.basket__subtitle}>Итого</span>
-                <span className={styles.basket__subtitle}>$ {formatNumber(totalPrice)}</span>
+                <span className={styles.basket__subtitle}>₽ {formatNumber(totalPrice)}</span>
               </div>
               <Button onClick={() => {
                 dispatch(toggleModalActive())
@@ -54,3 +59,5 @@ export const Basket: React.FC = () => {
     </main>
   )
 };
+
+export default BasketPage;

@@ -5,7 +5,7 @@ import type { IProductState, IProduct } from "./types";
 export const fetchProducts = createAsyncThunk<IProduct[], undefined, { rejectValue: string }>(
   'product/fetchProducts',
   async function (_, { rejectWithValue, dispatch }) {
-    const response = await fetch('https://fakestoreapi.com/products');
+    const response = await fetch('http://localhost:5000/products');
 
     if (!response.ok) {
       return rejectWithValue('Server Error');
@@ -78,6 +78,8 @@ const productSlice = createSlice({
       state.favouriteProducts = state.favouriteProducts.filter(p => p.id !== action.payload);
     },
     getCategoryProduct(state, action: PayloadAction<IProduct[]>) {
+      if(!state.loading) return
+      state.category = {}
       action.payload.forEach((product) => {
         if (!(product.category in state.category)) {
           state.category[`${product.category}`] = [product]
@@ -106,8 +108,9 @@ const productSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchProducts.fulfilled, (state, { payload }) => {
-        state.products = payload;
+        state.products = payload
         state.loading = false;
+
       })
       .addMatcher(isError, (state, { error }: any) => {
         state.error = error.message;

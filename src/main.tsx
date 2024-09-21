@@ -1,13 +1,7 @@
 import React from "react"
 import { createRoot } from "react-dom/client"
-import { Provider } from "react-redux"
-import { PersistGate } from "redux-persist/integration/react"
-import { App } from "./components/App/App"
-import store, { persistor } from './store/store';
+import App from "@/app/App"
 import "./index.scss"
-import { BrowserRouter } from "react-router-dom";
-import { Loader } from "./components/Loader/Loader"
-
 
 const container = document.getElementById("root")
 
@@ -16,13 +10,7 @@ if (container) {
 
   root.render(
     <React.StrictMode>
-      <Provider store={store}>
-        <PersistGate loading={<Loader/>} persistor={persistor}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </PersistGate>
-      </Provider>
+      <App />
     </React.StrictMode>,
   )
 } else {

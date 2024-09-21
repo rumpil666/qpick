@@ -1,6 +1,6 @@
 import styles from './Oferta.module.scss';
 
-export const Oferta: React.FC = () => {
+export const OfertaPage: React.FC = () => {
 
   return (
     <main className={styles.oferta}>
@@ -13,3 +13,5 @@ export const Oferta: React.FC = () => {
     </main>
   )
 };
+
+export default OfertaPage;

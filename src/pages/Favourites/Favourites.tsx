@@ -1,11 +1,11 @@
 import styles from './Favourites.module.scss';
-import { useAppSelector } from '../../store/hooks';
-import { CategoryItem } from '../../components/CategoryItem/CategoryItem';
-import { EmptyList } from '../../components/EmptyList/EmptyList';
-import { ProductModal } from '../../components/ProductModal/ProductModal';
-import { URL_PAGES } from '../../config/pages-url.config';
+import { useAppSelector } from '@/store/hooks';
+import { ProductItem } from '@/components/ProductItem/ProductItem';
+import { EmptyList } from '@/components/EmptyList/EmptyList';
+import { ProductModal } from '@/components/ProductModal/ProductModal';
+import { URL_PAGES } from '@/config/pages-url.config';
 
-export const Favourites: React.FC = () => {
+const FavouritesPage: React.FC = () => {
   const { favouriteProducts } = useAppSelector(state => state.product);
 
   return (
@@ -15,7 +15,7 @@ export const Favourites: React.FC = () => {
         favouriteProducts.length !== 0
           ? <ul className={styles.favourites__list}>
             {favouriteProducts.map((product) => (
-              <CategoryItem
+              <ProductItem
                 key={product.id}
                 {...product}
               />
@@ -28,3 +28,5 @@ export const Favourites: React.FC = () => {
     </main>
   )
 };
+
+export default FavouritesPage;

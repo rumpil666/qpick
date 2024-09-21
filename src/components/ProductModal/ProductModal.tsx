@@ -21,7 +21,7 @@ export const ProductModal: React.FC = () => {
           <img className={styles.productModal__icon} src={Rating} alt='rating' />
           <span className={styles.productModal__subtitle}>{productModal!.rating.rate}</span>
         </div>
-        <span className={styles.productModal__price}>{formatNumber(productModal!.price)} $</span>
+        <span className={styles.productModal__price}>{formatNumber(productModal!.price)} ₽</span>
         <p className={styles.productModal__description}>{productModal?.description}</p>
         <div className={styles.productModal__buttons}>
           <Button

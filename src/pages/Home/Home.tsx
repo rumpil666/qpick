@@ -1,11 +1,19 @@
-import { Category } from '../../components/Category/Category';
-import { Loader } from '../../components/Loader/Loader';
+import { Category } from './components/Category/Category';
+import { Loader } from '@/components/Loader/Loader';
 import styles from './Home.module.scss';
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useEffect } from 'react';
+import { fetchProducts } from '@/store/productSlice';
 
-export const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   const { error, loading } = useAppSelector(state => state.product);
   const { category } = useAppSelector(state => state.product);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [dispatch])
 
   return (
     <main className={styles.home}>
@@ -22,3 +30,5 @@ export const Home: React.FC = () => {
     </main>
   )
 };
+
+export default HomePage;
