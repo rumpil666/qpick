@@ -13,14 +13,11 @@
 - Redux Toolkit
 - Redux Persist
 
-## Ссылка на проект:
-[Проект на GitHub Pages](https://rumpil666.github.io/qpick/)
-
 ## Инструкция по развёртыванию:
 ```
 git clone git@github.com:rumpil666/qpick.git
 cd qpick
 npm i
-npm run build
 npm run dev
+npm run start-server
 ```
